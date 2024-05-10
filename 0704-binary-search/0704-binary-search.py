@@ -12,7 +12,7 @@ class Solution(object):
             mid = (high + low)//2
             if target == nums[mid]:
                 return mid
-            if target > nums[mid]:
+            elif target > nums[mid]:
                 low = mid + 1
             else:
                 high = mid -1
