@@ -1,7 +1,7 @@
 class Solution(object):
     def mySqrt(self, x):
         low = 1
-        high = 1024*32
+        high = x
         while low <= high:
             mid = (low+high)//2
             if x == mid * mid:
