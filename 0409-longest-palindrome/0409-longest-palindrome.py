@@ -1,15 +1,24 @@
 class Solution(object):
     def longestPalindrome(self, s):
         char_dict = {}
-        max_odd = 0
+        odd_count_found = False
         total = 0
         for char in s:
-            char_dict[char] = s.count(char)
-        for key in char_dict.keys():
-            if char_dict[key] %2 == 0:
-                total += char_dict[key]
-            elif char_dict[key]> max_odd:
-                max_odd = char_dict[key]
-        return total + max_odd
+            if char in char_dict:
+                char_dict[char] += 1
+            else:
+                char_dict[char] = 1
+
+        for count in char_dict.values():
+            if count %2 == 0:
+                total += count
+            else:
+                total += count -1
+                odd_count_found = True
+
+        if odd_count_found:
+            total += 1
+            
+        return total
 
         
