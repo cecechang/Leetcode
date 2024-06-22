@@ -1,6 +1,8 @@
 class Solution(object):
     def findTheDifference(self, s, t):
-        for char in t:
-            if char not in s:
-                return char
+        t_list = [char for char in t]
+        for char in s:
+            t_list.remove(char)
+        
+        return t_list[0]
         
