@@ -5,16 +5,16 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        high = len(nums)-1
-        low = 0
+        h = len(nums) - 1
+        l = 0
 
-        while low <= high:
-            mid = (high + low)//2
+        while l <= h:
+            mid = (h+l)//2
             if target == nums[mid]:
                 return mid
+            elif target < nums[mid]:
+                h = mid -1
             elif target > nums[mid]:
-                low = mid + 1
-            else:
-                high = mid -1
+                l = mid +1
         return -1
-        
+
