@@ -7,8 +7,8 @@ class Solution:
             else:
                 store[num] = 1
 
-        for num in store:
-            if store[num] % 2 != 0:
+        for count in store:
+            if store[count] % 2 != 0:
                 return False
         return True
                 
